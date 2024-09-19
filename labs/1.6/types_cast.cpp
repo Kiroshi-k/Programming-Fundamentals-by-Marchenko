@@ -10,37 +10,37 @@
 using namespace std;
 
 int main() {
-    // 1. Опис змінних типів int, float, unsigned short
+    // 1. РћРїРёСЃ Р·РјС–РЅРЅРёС… С‚РёРїС–РІ int, float, unsigned short
     int intVar = 30679;
     float floatVar = 2.57e-4;
     unsigned short ushortVar = 2384;
 
-    // 2. Ініціювання змінних з таблиці 15
-    cout << "Значення змінних:" << endl;
+    // 2. Р†РЅС–С†С–СЋРІР°РЅРЅСЏ Р·РјС–РЅРЅРёС… Р· С‚Р°Р±Р»РёС†С– 15
+    cout << "Р—РЅР°С‡РµРЅРЅСЏ Р·РјС–РЅРЅРёС…:" << endl;
     cout << "intVar = " << intVar << endl;
     cout << "floatVar = " << floatVar << endl;
     cout << "ushortVar = " << ushortVar << endl;
 
-    // 3. Опис змінних типів double, int, char
+    // 3. РћРїРёСЃ Р·РјС–РЅРЅРёС… С‚РёРїС–РІ double, int, char
     double doubleVar;
     int anotherIntVar;
     char charVar;
 
-    // 4. Ініціювання змінних:
-    // Неявне приведення типів (float до double)
+    // 4. Р†РЅС–С†С–СЋРІР°РЅРЅСЏ Р·РјС–РЅРЅРёС…:
+    // РќРµСЏРІРЅРµ РїСЂРёРІРµРґРµРЅРЅСЏ С‚РёРїС–РІ (float РґРѕ double)
     doubleVar = floatVar;
 
-    // Явне приведення типів (unsigned short до int)
+    // РЇРІРЅРµ РїСЂРёРІРµРґРµРЅРЅСЏ С‚РёРїС–РІ (unsigned short РґРѕ int)
     anotherIntVar = static_cast<int>(ushortVar);
 
-    // Механізм обходу суворої типізації (приведення int до char)
+    // РњРµС…Р°РЅС–Р·Рј РѕР±С…РѕРґСѓ СЃСѓРІРѕСЂРѕС— С‚РёРїС–Р·Р°С†С–С— (РїСЂРёРІРµРґРµРЅРЅСЏ int РґРѕ char)
     charVar = *reinterpret_cast<char*>(&intVar);
 
-    // Виведення результатів
-    cout << "\nПісля приведення типів:" << endl;
-    cout << "doubleVar (із floatVar) = " << doubleVar << endl;
-    cout << "anotherIntVar (із ushortVar) = " << anotherIntVar << endl;
-    cout << "charVar (із intVar через обхід суворої типізації) = " << charVar << endl;
+    // Р’РёРІРµРґРµРЅРЅСЏ СЂРµР·СѓР»СЊС‚Р°С‚С–РІ
+    cout << "\nРџС–СЃР»СЏ РїСЂРёРІРµРґРµРЅРЅСЏ С‚РёРїС–РІ:" << endl;
+    cout << "doubleVar (С–Р· floatVar) = " << doubleVar << endl;
+    cout << "anotherIntVar (С–Р· ushortVar) = " << anotherIntVar << endl;
+    cout << "charVar (С–Р· intVar С‡РµСЂРµР· РѕР±С…С–Рґ СЃСѓРІРѕСЂРѕС— С‚РёРїС–Р·Р°С†С–С—) = " << charVar << endl;
 
     return 0;
 }

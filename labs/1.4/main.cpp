@@ -9,40 +9,40 @@
 using namespace std;
 
 int main() {
-    // 1. Опис змінних відповідно до значень в 5 варіанті (таблиця 9)
+    // 1. РћРїРёСЃ Р·РјС–РЅРЅРёС… РІС–РґРїРѕРІС–РґРЅРѕ РґРѕ Р·РЅР°С‡РµРЅСЊ РІ 5 РІР°СЂС–Р°РЅС‚С– (С‚Р°Р±Р»РёС†СЏ 9)
     unsigned short usVar = 1400;
     int intVar = -386;
     float floatVar = 4.4525;
     double doubleVar = -7.3e23;
 
-    // 2. Опис вказівних змінних відповідних типів
+    // 2. РћРїРёСЃ РІРєР°Р·С–РІРЅРёС… Р·РјС–РЅРЅРёС… РІС–РґРїРѕРІС–РґРЅРёС… С‚РёРїС–РІ
     unsigned short* usPtr;
     int* intPtr;
     float* floatPtr;
     double* doublePtr;
 
-    // 3. Опис нетипізованої вказівної змінної
+    // 3. РћРїРёСЃ РЅРµС‚РёРїС–Р·РѕРІР°РЅРѕС— РІРєР°Р·С–РІРЅРѕС— Р·РјС–РЅРЅРѕС—
     void* voidPtr;
 
-    // 4. Ініціювання вказівних змінних адресами змінних
+    // 4. Р†РЅС–С†С–СЋРІР°РЅРЅСЏ РІРєР°Р·С–РІРЅРёС… Р·РјС–РЅРЅРёС… Р°РґСЂРµСЃР°РјРё Р·РјС–РЅРЅРёС…
     usPtr = &usVar;
     intPtr = &intVar;
     floatPtr = &floatVar;
     doublePtr = &doubleVar;
 
-    // 5. Ініціювання змінних через розіменування вказівних змінних
+    // 5. Р†РЅС–С†С–СЋРІР°РЅРЅСЏ Р·РјС–РЅРЅРёС… С‡РµСЂРµР· СЂРѕР·С–РјРµРЅСѓРІР°РЅРЅСЏ РІРєР°Р·С–РІРЅРёС… Р·РјС–РЅРЅРёС…
     *usPtr = 1400;
     *intPtr = -386;
     *floatPtr = 4.4525;
     *doublePtr = -7.3e23;
 
-    // 6. Визначення розміру всіх змінних
+    // 6. Р’РёР·РЅР°С‡РµРЅРЅСЏ СЂРѕР·РјС–СЂСѓ РІСЃС–С… Р·РјС–РЅРЅРёС…
     cout << "Size of unsigned short: " << sizeof(usVar) << " bytes" << endl;
     cout << "Size of int: " << sizeof(intVar) << " bytes" << endl;
     cout << "Size of float: " << sizeof(floatVar) << " bytes" << endl;
     cout << "Size of double: " << sizeof(doubleVar) << " bytes" << endl;
 
-    // 7. Ініціювання нетипізованої вказівної змінної адресами типізованих вказівних змінних
+    // 7. Р†РЅС–С†С–СЋРІР°РЅРЅСЏ РЅРµС‚РёРїС–Р·РѕРІР°РЅРѕС— РІРєР°Р·С–РІРЅРѕС— Р·РјС–РЅРЅРѕС— Р°РґСЂРµСЃР°РјРё С‚РёРїС–Р·РѕРІР°РЅРёС… РІРєР°Р·С–РІРЅРёС… Р·РјС–РЅРЅРёС…
     voidPtr = usPtr;
     cout << "Value via void pointer (unsigned short): " << *(unsigned short*)voidPtr << endl;
 
@@ -55,7 +55,7 @@ int main() {
     voidPtr = doublePtr;
     cout << "Value via void pointer (double): " << *(double*)voidPtr << endl;
 
-    // 8. Опис посилання
+    // 8. РћРїРёСЃ РїРѕСЃРёР»Р°РЅРЅСЏ
     int& intRef = intVar;
     cout << "Value of intRef (reference to int): " << intRef << endl;
 
