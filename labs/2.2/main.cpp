@@ -1,39 +1,43 @@
 #include <iostream>
+#include <string>
+
 using namespace std;
 
 
 struct Student {
-    string name;
-    char citizenship; // Символ для громадянства
-    bool dormitory;   // Чи проживає в гуртожитку
+    string name;  // Ім'я 
+    int course;   // Курс
+    bool dorm;    // Проживає в гуртожитку чи ні
 };
 
-// Опис перелічувального типу
-enum Names { Ivan, Petro, Olga, Anna, Dmytro, Kateryna, Mykola };
+// Перелічувальний тип для курсів
+enum Course { First = 1, Second, Third };
 
-// Опис індексованих змінних
-char citizenships[7] = { 'U', 'U', 'F', 'U', 'F', 'U', 'U' }; // Громадянство: U - українець, F - іноземець
-bool dormitory[7] = { true, false, true, true, false, true, false }; // Проживає в гуртожитку чи ні
 
 int main() {
-    // Опис масиву пойменованого типу
+    
     Student students[7];
 
-    // Ініціалізація масиву
-    for (int i = 0; i < 7; i++) {
-        students[i].name = (Names)i == Ivan ? "Ivan" : (Names)i == Petro ? "Petro" : (Names)i == Olga ? "Olga" :
-            (Names)i == Anna ? "Anna" : (Names)i == Dmytro ? "Dmytro" : (Names)i == Kateryna ? "Kateryna" : "Mykola";
-        students[i].citizenship = citizenships[i];
-        students[i].dormitory = dormitory[i];
-    }
+    // Ініціалізація масиву студентів
+    students[0] = { "Анна", First, true };
+    students[1] = { "Олег", Second, false };
+    students[2] = { "Іван", Third, true };
+    students[3] = { "Марія", First, true };
+    students[4] = { "Дмитро", Second, false };
+    students[5] = { "Оксана", Third, true };
+    students[6] = { "Андрій", First, false };
 
-    //  Обробка масиву - виведення студентів, що проживають в гуртожитку
-    cout << "Students living in the dormitory:\n";
+    // Обробка масиву студентів
+    int firstYearInDorm = 0; // Кількість студентів 1-го курсу, що живуть у гуртожитку
+
     for (int i = 0; i < 7; i++) {
-        if (students[i].dormitory) {
-            cout << "Name: " << students[i].name << ", Citizenship: " << students[i].citizenship << endl;
+        if (students[i].course == First && students[i].dorm) {
+            firstYearInDorm++;
         }
     }
+
+    
+    cout << "Кількість студентів 1-го курсу, що проживають у гуртожитку: " << firstYearInDorm << endl;
 
     return 0;
 }
